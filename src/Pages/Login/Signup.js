@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInW
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useToken from '../../Hooks/useToken';
 import Loading from '../Shared/Loading';
 
 const Signup = () => {
@@ -18,10 +19,12 @@ const Signup = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const [sendEmailVerification, sending] = useSendEmailVerification(auth);
 
+    const [token] = useToken(user || googleUser)
     const navigate = useNavigate()
+
     let errorMessage;
-    if (user || googleUser) {
-        navigate('/home')
+    if (token) {
+        navigate('/dashboard')
     }
     if (error || googleError || updateError) {
         errorMessage = <p className='text-error'> <small>Error: {error?.message}</small> </p>
