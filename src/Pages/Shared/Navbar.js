@@ -12,16 +12,17 @@ const Navbar = () => {
 
     const navItems = <>
         <li><Link to='/home'>Home</Link></li>
+        {user && <li><Link to='/dashboard'>Dashboard</Link></li>}
         <li>{user ?
-            <button onClick={logout} className='btn btn-ghost'>Sign out</button>
+            <button onClick={logout} className='btn btn-ghost  text-base'>Sign out</button>
             :
             <Link to='/login'>Login</Link>}
         </li>
-        <li>{user && <p className='text-secondary'>{user.displayName}</p>}</li>
+        <li>{user && <p className='text-teal-600'>{user.displayName}</p>}</li>
     </>
     return (
-        <div className='md:px-12'>
-            <div className="navbar bg-base-100">
+        <div className='md:px-10'>
+            <div className="navbar px-0 bg-base-100">
                 <div className="navbar-start">
                     <div className="md:pl-2 dropdown">
                         <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -31,7 +32,7 @@ const Navbar = () => {
                             {navItems}
                         </ul>
                     </div>
-                    <div className="btn btn-ghost normal-case text-lg md:text-xl lg:text-3xl font-medium text-secondary">Blackstone Automotive</div>
+                    <div className="btn btn-ghost normal-case text-lg md:text-xl lg:text-3xl text-secondary">Blackstone Automotive</div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0 uppercase">

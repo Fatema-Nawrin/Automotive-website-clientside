@@ -6,19 +6,33 @@ import Signup from './Pages/Login/Signup';
 import Purchase from './Pages/Purchase/Purchase';
 import Navbar from './Pages/Shared/Navbar';
 import RequireAuth from './Pages/Shared/RequireAuth';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyProfile from './Pages/Dashboard/MyProfile';
+import AddReview from './Pages/Dashboard/AddReview';
+import MyOrders from './Pages/Dashboard/MyOrders';
+
 
 function App() {
   return (
     <div className="App">
       <Navbar></Navbar>
       <Routes>
-        <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/purchase/:productId' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
-        <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='home' element={<Home />}></Route>
+        <Route path='purchase/:productId' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
+        <Route path='login' element={<Login />}></Route>
+        <Route path='signup' element={<Signup />}></Route>
+        <Route path='dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
+          <Route index element={<MyProfile></MyProfile>}></Route>
+          <Route path='review' element={<AddReview />}></Route>
+          <Route path='orders' element={<MyOrders />}></Route>
+
+        </Route>
 
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
