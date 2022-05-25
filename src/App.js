@@ -13,6 +13,7 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
+import RequireAdmin from './Pages/Shared/RequireAdmin';
 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='review' element={<AddReview />}></Route>
           <Route path='orders' element={<MyOrders />}></Route>
-          <Route path='makeadmin' element={<MakeAdmin />}></Route>
+          <Route path='makeadmin' element={<RequireAdmin><MakeAdmin /></RequireAdmin>}></Route>
 
         </Route>
 
