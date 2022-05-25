@@ -21,11 +21,11 @@ const Signup = () => {
 
     const [token] = useToken(user || googleUser)
     const navigate = useNavigate()
-
-    let errorMessage;
     if (token) {
         navigate('/dashboard')
     }
+
+    let errorMessage;
     if (error || googleError || updateError) {
         errorMessage = <p className='text-error'> <small>Error: {error?.message}</small> </p>
     }
@@ -36,7 +36,8 @@ const Signup = () => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
         await sendEmailVerification();
-    };
+    }
+
     return (
         <div className='flex justify-center px-2'>
             <div>
