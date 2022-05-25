@@ -8,7 +8,7 @@ const Purchase = () => {
 
     const { productId } = useParams();
 
-    const url = `http://localhost:5000/products/${productId}`
+    const url = `https://fierce-fortress-97663.herokuapp.com/products/${productId}`
     const { data: product, isLoading } = useQuery(['products', productId], () => fetch(url).then(res => res.json()))
     if (isLoading) {
         return <Loading></Loading>

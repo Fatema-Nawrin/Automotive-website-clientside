@@ -10,7 +10,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/bookings?buyerEmail=${user.email}`, {
+            fetch(`https://fierce-fortress-97663.herokuapp.com/bookings?buyerEmail=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -41,8 +41,8 @@ const MyOrders = () => {
                             <th>Product</th>
                             <th>Quantity</th>
                             <th>Address</th>
-                            <th>Payment</th>
                             <th>Action</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>

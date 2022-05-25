@@ -29,7 +29,7 @@ const Booking = ({ product }) => {
                 address: event.target.address.value,
                 orderQuantity
             }
-            fetch('http://localhost:5000/bookings', {
+            fetch('https://fierce-fortress-97663.herokuapp.com/bookings', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

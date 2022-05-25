@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading'
 import User from './User';
 
 const MakeAdmin = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://fierce-fortress-97663.herokuapp.com/users', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -17,9 +17,9 @@ const MakeAdmin = () => {
     }
     return (
         <div className='px-4 lg:px-2 py-4'>
-            <h3 className='pb-4 text-lg'>List of users:</h3>
+            <h3 className='pb-4 px-4 text-lg'>List of users:</h3>
             <div className="overflow-x-auto px-4">
-                <table className="table table-zebra w-full lg:w-4/5">
+                <table className="table table-zebra w-full lg:w-9/12">
 
                     <thead>
                         <tr>
