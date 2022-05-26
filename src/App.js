@@ -16,6 +16,7 @@ import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import RequireAdmin from './Pages/Shared/RequireAdmin';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import Payment from './Pages/Dashboard/Payment';
+import Footer from './Pages/Shared/Footer';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         </Route>
 
       </Routes>
+      <Footer></Footer>
       <ToastContainer />
     </div>
   );
