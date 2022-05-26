@@ -17,6 +17,7 @@ import RequireAdmin from './Pages/Shared/RequireAdmin';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import Payment from './Pages/Dashboard/Payment';
 import Footer from './Pages/Shared/Footer';
+import NotFound from './Pages/Shared/NotFound';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path='addproduct' element={<RequireAdmin><AddProduct /></RequireAdmin>}></Route>
 
         </Route>
+        <Route path='*' element={<NotFound />}></Route>
 
       </Routes>
       <Footer></Footer>
