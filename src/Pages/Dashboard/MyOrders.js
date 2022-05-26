@@ -70,11 +70,11 @@ const MyOrders = () => {
                     </tbody>
                 </table>
             </div>
-            {deleteBooking && <DeleteConfirmModal
+            {/* {deleteBooking && <DeleteConfirmModal
                 deleteBooking={deleteBooking}
                 setDeleteBooking={setDeleteBooking}
             >
-            </DeleteConfirmModal>}
+            </DeleteConfirmModal>} */}
         </div >
     );
 };
