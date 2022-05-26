@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const ProfileModal = ({ email }) => {
+const ProfileModal = ({ email, refetch }) => {
     const handleUpdate = (event) => {
         event.preventDefault();
         const updateInfo = {
@@ -20,15 +20,19 @@ const ProfileModal = ({ email }) => {
             .then(res => res.json())
             .then(data => {
                 toast('Your profile is updated.')
+                refetch()
             })
 
         event.target.reset()
     }
     return (
         <div>
-            <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
+            <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <div className="modal-action">
+                        <label for="my-modal-6" className="btn">X</label>
+                    </div>
                     <div className='mx-auto w-full max-w-xs'>
                         <form className='grid grid-cols-1 gap-2' onSubmit={handleUpdate}>
 
@@ -47,9 +51,7 @@ const ProfileModal = ({ email }) => {
                         </form>
 
                     </div>
-                    <div class="modal-action">
-                        <label for="my-modal-6" class="btn">X</label>
-                    </div>
+
 
 
                 </div>

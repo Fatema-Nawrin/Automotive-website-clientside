@@ -21,9 +21,9 @@ const Reviews = () => {
             <>
                 <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                     {reviews.map(review =>
-                        <SwiperSlide><div class="card w-full bg-teal-50 shadow-xl">
-                            <div class="card-body">
-                                <h2 class="text-center text-secondary my-4">
+                        <SwiperSlide><div className="card w-full bg-teal-50 shadow-xl">
+                            <div className="card-body">
+                                <h2 className="text-center text-secondary my-4">
                                     {
                                         [...Array(parseInt(review.ratings))].map((e, i) => <FontAwesomeIcon icon={faStar} key={i}></FontAwesomeIcon>)
                                     }
@@ -32,8 +32,8 @@ const Reviews = () => {
 
                                 </h2>
                                 <p className='md:px-4'>{review.review}</p>
-                                <div class="card-actions justify-center">
-                                    <p class="text-secondary font-bold">{review.name}</p>
+                                <div className="card-actions justify-center">
+                                    <p className="text-secondary font-bold">{review.name}</p>
                                 </div>
                             </div>
                         </div></SwiperSlide>)}

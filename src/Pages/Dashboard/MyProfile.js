@@ -1,19 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useQuery } from 'react-query';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 import ProfileModal from './ProfileModal';
 
 const MyProfile = () => {
     const [user] = useAuthState(auth);
+    // const [openModal, setOpenModal] = useState(false)
+    const { data: userinfo, isLoading, refetch } = useQuery('user', () => fetch(`http://localhost:5000/users/${user.email}`, {
+        method: 'GET',
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    })
+        .then(res => res.json())
+
+    )
+    console.log(userinfo)
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
     return (
-        <div className='px-4 lg:px-8'>
-            <h2 className='text-lg py-4'>Check and update your profile</h2>
-            <p> <span className='font-bold'>Name:</span> {user.displayName}</p>
-            <p> <span className='font-bold '>Email:</span>  {user.email}</p>
+        <div>
+            <div className='px-8 lg:px-16 text-lg'>
+                <h2 className='text-xl py-4'>Check and update your profile</h2>
+                <p> <span className='ml-2 font-bold'>Name:</span> {user.displayName}</p>
+                <p> <span className='ml-2 font-bold '>Email:</span>  {user.email}</p>
+                {userinfo?.location && <p> <span className='ml-2 font-bold '>Location:</span>  {userinfo.location}</p>}
 
-            <label for="my-modal-6" class="mt-4 btn btn-primary modal-button">Update</label>
-            <ProfileModal email={user.email}></ProfileModal>
+                {userinfo?.phone && <p> <span className='ml-2 font-bold '>Phone:</span>  {userinfo.phone}</p>}
+                {userinfo?.education && <p> <span className='ml-2 font-bold '>Education:</span>  {userinfo.education}</p>}
+                {userinfo?.linkedin && <p> <span className='ml-2 font-bold '>Linkedin Profile:</span>  {userinfo.linkedin}</p>}
+
+
+
+
+
+                <label for="my-modal-6" className="mt-4 btn btn-primary modal-button">Update</label>
+                <ProfileModal
+                    refetch={refetch}
+                    email={user.email}
+                ></ProfileModal>
+            </div>
+
+
         </div>
     );
 };
