@@ -2,7 +2,7 @@ import React from 'react';
 
 const Career = () => {
     return (
-        <div className='w-4/5 mx-auto my-8 py-4 md:py-8 bg-cyan-900 text-white'>
+        <div className='w-4/5 px-4 mx-auto my-8 py-4 md:py-8 bg-cyan-900 text-white'>
             <h2 className='text-center text-xl md:text-4xl pb-4 lg:pb-8 font-bold'>Global Career</h2>
             <div className='lg:mx-8'>
                 <p >The Blackstone Automotive company offer jobs around the world. We hire people based on a combination of the quality of work, passion towards it and technological skill.</p>
