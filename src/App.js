@@ -18,6 +18,7 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import Payment from './Pages/Dashboard/Payment';
 import Footer from './Pages/Shared/Footer';
 import NotFound from './Pages/Shared/NotFound';
+import Blogs from './Pages/Blogs/Blogs';
 
 
 function App() {
@@ -27,9 +28,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='home' element={<Home />}></Route>
+        <Route path='blogs' element={<Blogs />}></Route>
         <Route path='purchase/:productId' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
         <Route path='login' element={<Login />}></Route>
         <Route path='signup' element={<Signup />}></Route>
+
         <Route path='dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='review' element={<AddReview />}></Route>
