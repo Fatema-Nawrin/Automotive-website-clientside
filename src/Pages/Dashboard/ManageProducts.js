@@ -12,7 +12,7 @@ const ManageProducts = () => {
     }
     return (
         <div className='px-4 lg:px-2 py-4'>
-            <h3 className='pb-4 px-4 text-lg'>List of Orders:</h3>
+            <h3 className='pb-4 px-4 text-lg'>List of Products:</h3>
             <div className="overflow-x-auto px-4">
                 <table className="table table-zebra w-full lg:w-9/12">
 
