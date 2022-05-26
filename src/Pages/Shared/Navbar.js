@@ -14,6 +14,7 @@ const Navbar = () => {
     const navItems = <>
         <li><Link to='/home'>Home</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
+        <li><Link to='/portfolio'>Portfolio</Link></li>
         {user && <li><Link to='/dashboard'>Dashboard</Link></li>}
         <li>{user ?
             <button onClick={logout} className='btn btn-ghost  text-base'>Sign out</button>

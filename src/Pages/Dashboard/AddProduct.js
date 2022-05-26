@@ -18,7 +18,6 @@ const AddProduct = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result)
                 if (result.success) {
                     const img = result.data.url;
                     const newProduct = {
@@ -29,7 +28,7 @@ const AddProduct = () => {
                         stock: parseInt(data.stock),
                         img: img
                     }
-                    fetch('http://localhost:5000/product', {
+                    fetch('https://fierce-fortress-97663.herokuapp.com/product', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

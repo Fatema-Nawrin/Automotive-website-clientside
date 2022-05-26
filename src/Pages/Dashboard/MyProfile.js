@@ -8,7 +8,7 @@ import ProfileModal from './ProfileModal';
 const MyProfile = () => {
     const [user] = useAuthState(auth);
     // const [openModal, setOpenModal] = useState(false)
-    const { data: userinfo, isLoading, refetch } = useQuery('user', () => fetch(`http://localhost:5000/users/${user.email}`, {
+    const { data: userinfo, isLoading, refetch } = useQuery('user', () => fetch(`https://fierce-fortress-97663.herokuapp.com/users/${user.email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -17,7 +17,7 @@ const MyProfile = () => {
         .then(res => res.json())
 
     )
-    console.log(userinfo)
+
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -38,7 +38,7 @@ const MyProfile = () => {
 
 
 
-                <label for="my-modal-6" className="mt-4 btn btn-primary modal-button">Update</label>
+                <label htmlFor="my-modal-6" className="mt-4 btn btn-primary modal-button">Update</label>
                 <ProfileModal
                     refetch={refetch}
                     email={user.email}

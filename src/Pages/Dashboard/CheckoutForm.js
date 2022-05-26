@@ -16,7 +16,7 @@ const CheckoutForm = ({ booking }) => {
     const { _id, cost, product, buyer, buyerEmail } = booking;
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://fierce-fortress-97663.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -78,7 +78,7 @@ const CheckoutForm = ({ booking }) => {
                 booking: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:5000/bookings/${_id}`, {
+            fetch(`https://fierce-fortress-97663.herokuapp.com/bookings/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

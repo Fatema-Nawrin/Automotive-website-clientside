@@ -10,7 +10,7 @@ const ProfileModal = ({ email, refetch }) => {
             location: event.target.location.value,
             linkedin: event.target.linkedin.value
         }
-        fetch(`http://localhost:5000/usersinfo/${email}`, {
+        fetch(`https://fierce-fortress-97663.herokuapp.com/usersinfo/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -31,7 +31,7 @@ const ProfileModal = ({ email, refetch }) => {
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
                     <div className="modal-action">
-                        <label for="my-modal-6" className="btn">X</label>
+                        <label htmlFor="my-modal-6" className="btn">X</label>
                     </div>
                     <div className='mx-auto w-full max-w-xs'>
                         <form className='grid grid-cols-1 gap-2' onSubmit={handleUpdate}>
