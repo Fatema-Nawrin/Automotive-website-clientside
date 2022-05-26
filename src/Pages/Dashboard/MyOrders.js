@@ -3,9 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init'
+import DeleteConfirmModal from './DeleteConfirmModal';
 
 const MyOrders = () => {
     const [bookings, setBookings] = useState([]);
+    const [deleteBooking, setDeleteBooking] = useState(null);
+
     const [user] = useAuthState(auth)
     const navigate = useNavigate();
     useEffect(() => {
@@ -40,6 +43,7 @@ const MyOrders = () => {
                             <th>No</th>
                             <th>Product</th>
                             <th>Quantity</th>
+                            <th>Total Cost</th>
                             <th>Address</th>
                             <th>Action</th>
                             <th>Payment</th>
@@ -49,12 +53,15 @@ const MyOrders = () => {
                         {bookings.map((booking, index) =>
                             <tr key={index}>
                                 <th>{index + 1}</th>
+
                                 <td>{booking.product}</td>
                                 <td>{booking.orderQuantity}</td>
+                                <td>${booking.cost}</td>
                                 <td>{booking.address}</td>
-                                <td><button className='btn btn-error btn-sm'>Delete</button></td>
+                                <td>{!booking.paid ? <button onClick={() => setDeleteBooking(booking)} for="delete-confirm-modal" className='btn btn-error btn-sm'>Cancel</button> : <p className='text-secondary'>Tx id: {booking.transactionId}</p>}</td>
 
-                                <td><Link to='/'><button className='btn btn-primary btn-sm'> Pay </button></Link></td>
+                                <td>{!booking.paid ? <Link to={`/dashboard/payment/${booking._id}`}><button className='btn btn-primary btn-sm'> Pay </button></Link> : <span className='font-semibold text-secondary'> Paid </span>}</td>
+
                             </tr>
                         )}
 
@@ -63,7 +70,12 @@ const MyOrders = () => {
                     </tbody>
                 </table>
             </div>
-        </div>
+            {deleteBooking && <DeleteConfirmModal
+                deleteBooking={deleteBooking}
+                setDeleteBooking={setDeleteBooking}
+            >
+            </DeleteConfirmModal>}
+        </div >
     );
 };
 

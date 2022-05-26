@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const Booking = ({ product }) => {
-    const { _id, name, minimumQuantity, stock } = product;
+    const { _id, name, minimumQuantity, stock, price } = product;
     const [user] = useAuthState(auth);
     const [input, setInput] = useState(minimumQuantity);
     const [disablevalue, setDisablevalue] = useState(false)
@@ -20,9 +20,11 @@ const Booking = ({ product }) => {
             toast.error(`Select an amount between ${minimumQuantity} and ${stock} to order the product`);
         }
         else {
+            const cost = parseInt(price) * orderQuantity;
             const booking = {
                 bookingId: _id,
                 product: name,
+                cost: parseInt(cost),
                 buyer: user.displayName,
                 buyerEmail: user.email,
                 phone: event.target.phone.value,
@@ -53,6 +55,8 @@ const Booking = ({ product }) => {
                 <form className='grid grid-cols-1 gap-2' onSubmit={handleBooking}>
                     <label className='font-semibold'>Product</label>
                     <input disabled className="input input-bordered input-primary rounded-none " type="text" name="product" value={name} />
+                    <label className='font-semibold'>Price per product</label>
+                    <input disabled className="input input-bordered input-primary rounded-none " type="text" name="product" value={price} />
                     <label className='font-semibold'>Name</label>
                     <input className="input input-bordered rounded-none " type="text" disabled name="name" value={user?.displayName} />
 
