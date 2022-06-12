@@ -15,7 +15,7 @@ password: 345678
 - Email/password and google auth system is implemented.
 
 ### Frameworks/ Tools
--  React router,   react-toastify, react firebase hooks, react stripe, react swiper
+-  React router, react-toastify, react firebase hooks, react stripe, react swiper
 -  Firebase, mongodb, tailwind and daisyui
 
 
