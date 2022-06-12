@@ -20,6 +20,7 @@ import Footer from './Pages/Shared/Footer';
 import NotFound from './Pages/Shared/NotFound';
 import ManageOrders from './Pages/Dashboard/ManageOrders';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
+import Productspage from './Pages/Products/Productspage';
 
 
 function App() {
@@ -29,10 +30,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='home' element={<Home />}></Route>
+        <Route path='products' element={<Productspage />}></Route>
         <Route path='purchase/:productId' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
         <Route path='login' element={<Login />}></Route>
         <Route path='signup' element={<Signup />}></Route>
-
         <Route path='dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='review' element={<AddReview />}></Route>

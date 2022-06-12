@@ -1,4 +1,7 @@
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Product from './Product';
 
 const Products = () => {
@@ -7,7 +10,7 @@ const Products = () => {
         fetch('https://fierce-fortress-97663.herokuapp.com/products')
             .then(res => res.json())
             .then((data => setProducts(data)))
-    })
+    }, [])
     return (
         <div className='px-8 lg:px-16 py-8'>
             <h2 className='text-xl md:text-2xl lg:text-3xl text-center my-6'>Manufactured Automotor Parts</h2>
@@ -18,6 +21,8 @@ const Products = () => {
                 ></Product>)
                 }
             </div>
+            <button className='btn my-4 lg:my-10 float-right hover:bg-transparent'><Link to='/products'>
+                See all products <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></Link></button>
 
         </div>
     );

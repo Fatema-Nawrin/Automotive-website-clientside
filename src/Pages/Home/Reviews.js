@@ -13,17 +13,17 @@ const Reviews = () => {
         fetch('https://fierce-fortress-97663.herokuapp.com/reviews')
             .then(res => res.json())
             .then((data => setReviews(data)))
-    })
+    }, [])
     return (
-        <div className='w-4/5 lg:w-4/6 mx-auto my-8 lg:my-16 text-center'>
+        <div className='w-4/5 lg:w-4/6 mx-auto my-12 lg:my-16 text-center'>
             <h1 className='text-secondary text-xl md:text-3xl'>Ratings and Reviews</h1>
             <h2 className='text-lg font-semibold my-8'>Check out what our buyers are saying about us </h2>
             <>
-                <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+                <Swiper navigation={true} modules={[Navigation]} className="mySwiper bg-teal-50 shadow-xl">
                     {reviews.map(review =>
-                        <SwiperSlide><div className="card w-full bg-teal-50 shadow-xl">
+                        <SwiperSlide><div className="card h-fit w-full bg-teal-50">
                             <div className="card-body">
-                                <h2 className="text-center text-secondary my-4">
+                                <h2 className="text-center text-secondary my-4 px-6">
                                     {
                                         [...Array(parseInt(review.ratings))].map((e, i) => <FontAwesomeIcon icon={faStar} key={i}></FontAwesomeIcon>)
                                     }
