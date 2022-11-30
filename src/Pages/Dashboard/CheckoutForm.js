@@ -13,7 +13,7 @@ const CheckoutForm = ({ booking }) => {
 
 
 
-    const { _id, cost, product, buyer, buyerEmail } = booking;
+    const { _id, cost, buyer, buyerEmail } = booking;
 
     useEffect(() => {
         fetch('https://fierce-fortress-97663.herokuapp.com/create-payment-intent', {

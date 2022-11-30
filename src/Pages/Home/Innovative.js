@@ -1,4 +1,4 @@
-import { faGlobe, faRecycle, faTrashRestore, faTree, faWater } from '@fortawesome/free-solid-svg-icons';
+import { faRecycle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
