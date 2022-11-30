@@ -6,7 +6,7 @@ const Productspage = () => {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
-        fetch('https://fierce-fortress-97663.herokuapp.com/products')
+        fetch('https://automotive-website-serverside-production.up.railway.app/products')
             .then(res => res.json())
             .then((data => {
                 setProducts(data)

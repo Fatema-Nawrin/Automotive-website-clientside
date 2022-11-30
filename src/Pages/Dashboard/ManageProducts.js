@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import SingleProduct from './SingleProduct';
 
 const ManageProducts = () => {
-    const { data: products, isLoading, refetch } = useQuery('allbookings', () => fetch('https://fierce-fortress-97663.herokuapp.com/products')
+    const { data: products, isLoading, refetch } = useQuery('allbookings', () => fetch('https://automotive-website-serverside-production.up.railway.app/products')
         .then(res => res.json())
     )
     if (isLoading) {

@@ -8,7 +8,7 @@ import ProfileModal from './ProfileModal';
 const MyProfile = () => {
     const [user] = useAuthState(auth);
     // const [openModal, setOpenModal] = useState(false)
-    const { data: userinfo, isLoading, refetch } = useQuery('user', () => fetch(`https://fierce-fortress-97663.herokuapp.com/users/${user.email}`, {
+    const { data: userinfo, isLoading, refetch } = useQuery('user', () => fetch(`https://automotive-website-serverside-production.up.railway.app/users/${user.email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

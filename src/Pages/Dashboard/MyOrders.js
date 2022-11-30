@@ -13,7 +13,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            fetch(`https://fierce-fortress-97663.herokuapp.com/bookings?buyerEmail=${user.email}`, {
+            fetch(`https://automotive-website-serverside-production.up.railway.app/bookings?buyerEmail=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

@@ -31,7 +31,7 @@ const Booking = ({ product }) => {
                 address: event.target.address.value,
                 orderQuantity
             }
-            fetch('https://fierce-fortress-97663.herokuapp.com/bookings', {
+            fetch('https://automotive-website-serverside-production.up.railway.app/bookings', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

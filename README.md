@@ -1,9 +1,9 @@
 # Blackstone Automotive
 
 Live site link [Blackstone automotive](https://blackstone-automotive.web.app/).
-Admin Credentials:
-email: adminuser@amail.com
-password: 345678
+ Admin Credentials:
+ email: adminuser@amail.com
+ password: 345678
 
 ## Functions of Website
 - A manufacturing company website.

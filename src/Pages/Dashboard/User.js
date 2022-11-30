@@ -5,7 +5,7 @@ const User = ({ user, index, refetch }) => {
     const { email, role } = user;
 
     const makeAdmin = () => {
-        fetch(`https://fierce-fortress-97663.herokuapp.com/users/admin/${email}`, {
+        fetch(`https://automotive-website-serverside-production.up.railway.app/users/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
