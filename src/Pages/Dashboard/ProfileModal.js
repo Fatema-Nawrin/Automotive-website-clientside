@@ -10,7 +10,7 @@ const ProfileModal = ({ email, refetch }) => {
             location: event.target.location.value,
             linkedin: event.target.linkedin.value
         }
-        fetch(`https://automotive-website-serverside-production.up.railway.app/usersinfo/${email}`, {
+        fetch(`https://public-rozella-fatema.koyeb.app/usersinfo/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

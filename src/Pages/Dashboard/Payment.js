@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51L1BS3CGNwyMDjuO07cDqOQtHg2y7DaUenAPs
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `https://automotive-website-serverside-production.up.railway.app/bookings/${id}`;
+    const url = `https://public-rozella-fatema.koyeb.app/bookings/${id}`;
     const { data: booking, isLoading } = useQuery(['bookings', id], () => fetch(url, {
         method: "GET",
         headers: {

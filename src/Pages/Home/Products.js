@@ -7,7 +7,7 @@ import Product from './Product';
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('https://automotive-website-serverside-production.up.railway.app/products')
+        fetch('https://public-rozella-fatema.koyeb.app/products')
             .then(res => res.json())
             .then((data => setProducts(data)))
     }, [])

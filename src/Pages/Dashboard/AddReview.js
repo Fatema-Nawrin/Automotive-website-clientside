@@ -12,7 +12,7 @@ const AddReview = () => {
             review: event.target.review.value,
             ratings: event.target.ratings.value
         }
-        fetch('https://automotive-website-serverside-production.up.railway.app/reviews', {
+        fetch('https://public-rozella-fatema.koyeb.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

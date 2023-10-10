@@ -10,7 +10,7 @@ const Product = ({ product }) => {
     return (
         <div>
             <div className="card lg:max-w-lg h-full bg-teal-50 shadow-xl">
-                <figure><img className='h-64 w-full' src={img} alt="Shoes" /></figure>
+                <figure><img className='h-64 w-full' src={img} alt="" /></figure>
                 <div className="card-body">
                     <h2 className="text-lg lg:text-xl font-semibold ">{name}</h2>
                     <p>{description}</p>

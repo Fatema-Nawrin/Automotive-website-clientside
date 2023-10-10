@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading'
 import User from './User';
 
 const MakeAdmin = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://automotive-website-serverside-production.up.railway.app/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://public-rozella-fatema.koyeb.app/users', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -10,7 +10,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('https://automotive-website-serverside-production.up.railway.app/reviews')
+        fetch('https://public-rozella-fatema.koyeb.app/reviews')
             .then(res => res.json())
             .then((data => setReviews(data)))
     }, [])

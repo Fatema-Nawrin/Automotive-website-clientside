@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import SingleOrder from './SingleOrder';
 
 const ManageOrders = () => {
-    const { data: bookings, isLoading, refetch } = useQuery('allbookings', () => fetch('https://automotive-website-serverside-production.up.railway.app/allbookings', {
+    const { data: bookings, isLoading, refetch } = useQuery('allbookings', () => fetch('https://public-rozella-fatema.koyeb.app/allbookings', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

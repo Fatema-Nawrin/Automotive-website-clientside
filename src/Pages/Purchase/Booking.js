@@ -31,7 +31,7 @@ const Booking = ({ product }) => {
                 address: event.target.address.value,
                 orderQuantity
             }
-            fetch('https://automotive-website-serverside-production.up.railway.app/bookings', {
+            fetch('https://public-rozella-fatema.koyeb.app/bookings', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

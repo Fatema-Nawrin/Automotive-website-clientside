@@ -28,7 +28,7 @@ const AddProduct = () => {
                         stock: parseInt(data.stock),
                         img: img
                     }
-                    fetch('https://automotive-website-serverside-production.up.railway.app/product', {
+                    fetch('https://public-rozella-fatema.koyeb.app/product', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const CancelModal = ({ cancel, setCancel }) => {
     const { _id } = cancel;
     const handleCancel = () => {
-        fetch(`https://automotive-website-serverside-production.up.railway.app/bookings/${_id}`, {
+        fetch(`https://public-rozella-fatema.koyeb.app/bookings/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

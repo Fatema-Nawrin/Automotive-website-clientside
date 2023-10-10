@@ -5,7 +5,7 @@ const User = ({ user, index, refetch }) => {
     const { email, role } = user;
 
     const makeAdmin = () => {
-        fetch(`https://automotive-website-serverside-production.up.railway.app/users/admin/${email}`, {
+        fetch(`https://public-rozella-fatema.koyeb.app/users/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

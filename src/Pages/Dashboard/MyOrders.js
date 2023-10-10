@@ -13,7 +13,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            fetch(`https://automotive-website-serverside-production.up.railway.app/bookings?buyerEmail=${user.email}`, {
+            fetch(`https://public-rozella-fatema.koyeb.app/bookings?buyerEmail=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

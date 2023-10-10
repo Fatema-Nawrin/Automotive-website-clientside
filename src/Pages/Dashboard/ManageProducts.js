@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import SingleProduct from './SingleProduct';
 
 const ManageProducts = () => {
-    const { data: products, isLoading, refetch } = useQuery('allbookings', () => fetch('https://automotive-website-serverside-production.up.railway.app/products')
+    const { data: products, isLoading, refetch } = useQuery('allbookings', () => fetch('https://public-rozella-fatema.koyeb.app/products')
         .then(res => res.json())
     )
     if (isLoading) {

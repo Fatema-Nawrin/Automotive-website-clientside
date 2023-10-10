@@ -16,7 +16,7 @@ const CheckoutForm = ({ booking }) => {
     const { _id, cost, buyer, buyerEmail } = booking;
 
     useEffect(() => {
-        fetch('https://automotive-website-serverside-production.up.railway.app/create-payment-intent', {
+        fetch('https://public-rozella-fatema.koyeb.app/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -78,7 +78,7 @@ const CheckoutForm = ({ booking }) => {
                 booking: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://automotive-website-serverside-production.up.railway.app/bookings/${_id}`, {
+            fetch(`https://public-rozella-fatema.koyeb.app/bookings/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

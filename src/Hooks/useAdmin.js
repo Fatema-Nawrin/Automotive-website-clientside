@@ -6,7 +6,7 @@ const useAdmin = user => {
     useEffect(() => {
         const email = user?.email;
         if (email) {
-            fetch(`https://automotive-website-serverside-production.up.railway.app/admin/${email}`, {
+            fetch(`https://public-rozella-fatema.koyeb.app/admin/${email}`, {
                 method: "GET",
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

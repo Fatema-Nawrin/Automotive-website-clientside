@@ -6,7 +6,7 @@ const useToken = user => {
         const email = user?.user?.email;
         const currentUser = { email: email };
         if (email) {
-            fetch(`https://automotive-website-serverside-production.up.railway.app/users/${email}`, {
+            fetch(`https://public-rozella-fatema.koyeb.app/users/${email}`, {
                 method: "PUT",
                 headers: {
                     'content-type': 'application/json'
