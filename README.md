@@ -1,11 +1,9 @@
 # Blackstone Automotive
 
 Live site link [Blackstone automotive](https://blackstone-automotive.web.app/).
- Admin Credentials:
- email: adminuser@amail.com
- password: 345678
 
 ## Functions of Website
+
 - A manufacturing company website.
 - Users can register and manage their orders.
 - User and admin both can update their profile.
@@ -15,7 +13,6 @@ Live site link [Blackstone automotive](https://blackstone-automotive.web.app/).
 - Email/password and google auth system is implemented.
 
 ### Frameworks/ Tools
--  React router, react-toastify, react firebase hooks, react stripe, react swiper
--  Firebase, mongodb, tailwind and daisyui
 
-
+- React router, react-toastify, react firebase hooks, react stripe, react swiper
+- Firebase, mongodb, tailwind and daisyui
